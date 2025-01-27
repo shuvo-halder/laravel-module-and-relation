@@ -28,7 +28,7 @@
                         <td>{{ ++$index }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>country</td>
+                        <td>{{ $user->location->country_name }}</td>
                         <td>
                             <a href="#" class="btn btn-primary btn-sm">Edit</a>
                             <a href="#" class="btn btn-danger btn-sm">Delete</a>

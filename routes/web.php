@@ -31,5 +31,27 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/user-details', [HomeController::class, 'index']);
+// Route::get('dump-add', function(){
+//     \App\Models\Location::create([
+//         'uid' => 1,
+//         'country_name' => 'india'
+//     ]);
+//     \App\Models\Location::create([
+//         'uid' => 2,
+//         'country_name' => 'usa'
+//     ]);
+//     \App\Models\Location::create([
+//         'uid' => 3,
+//         'country_name' => 'uk'
+//     ]);
+//     \App\Models\Location::create([
+//         'uid' => 4,
+//         'country_name' => 'russia'
+//     ]);
+//     \App\Models\Location::create([
+//         'uid' => 5,
+//         'country_name' => 'ama'
+//     ]);
+// });
 
 require __DIR__.'/auth.php';
