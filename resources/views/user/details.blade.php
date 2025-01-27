@@ -7,6 +7,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <a href="{{ route('login') }}">Login</a>
+    <a href="{{ route('register') }}">register</a>
     <div class="container mt-5">
         <h2 class="mb-4">User Details</h2>
         <table class="table table-bordered">
@@ -15,20 +17,24 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>country</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Example row -->
-                <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>john.doe@example.com</td>
-                    <td>
-                        <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                    </td>
-                </tr>
+                @foreach ($users as $index => $user)
+                    <tr>
+                        <td>{{ ++$index }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>country</td>
+                        <td>
+                            <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                @endforeach
                 <!-- Add more rows as needed -->
             </tbody>
         </table>
