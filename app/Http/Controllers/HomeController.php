@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $users = User::all();
+        $users = User::with('location')->get();
 
         return view('user.details',[
             'users' => $users
@@ -18,7 +18,7 @@ class HomeController extends Controller
     }
 
     public function location(){
-        $location = Location::all();
+        $location = Location::with('user')->get();
         return view('user.location',[
             'locations' => $location
         ]);
