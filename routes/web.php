@@ -54,4 +54,13 @@ Route::get('/user-details', [HomeController::class, 'index']);
 //     ]);
 // });
 
+// Route::get('add-location', function(){
+//     $user = \factory(\App\Models\User::class)->create();
+//     $user->location()->create([
+//         'country_name' => 'india'
+//     ]);
+// });
+
+Route::get('location', [HomeController::class, 'location']);
+
 require __DIR__.'/auth.php';
