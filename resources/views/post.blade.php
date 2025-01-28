@@ -16,7 +16,7 @@
                             <h3>{{ $post->title }}</h3>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">{{ $post->user->name }}</p>
+                            <p class="card-text">{{ optional($post->user)->name }}</p>
                         </div>
                         
                     </div>
