@@ -10,17 +10,17 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Post Title</h3>
+                @foreach ($posts as $key => $post)
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>{{ $post->title }}</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ $post->user->name }}</p>
+                        </div>
+                        
                     </div>
-                    <div class="card-body">
-                        <p class="card-text">This is a sample post content. You can replace this with your actual post content.</p>
-                    </div>
-                    <div class="card-footer text-muted">
-                        Posted on: <span id="post-date">October 10, 2023</span>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

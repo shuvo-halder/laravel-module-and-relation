@@ -36,7 +36,9 @@ class HomeController extends Controller
     }
 
     public function Posts(){
-
-        return view('post');
+        $posts = Post::get();
+        return view('post',[
+            'posts' => $posts,
+        ]);
     }
 }
