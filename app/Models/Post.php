@@ -13,4 +13,8 @@ class Post extends Model
         'uid',
         'title',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class, 'uid', 'id');
+    }
 }
