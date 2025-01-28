@@ -65,4 +65,12 @@ Route::get('location', [HomeController::class, 'location']);
 
 Route::get('/user-loc', [HomeController::class, 'locationes']);
 
+// Route::get('/user-address', function(){
+//     $users = \App\Models\User::with('location')->get();
+
+//     return view('user.locationes',[
+//         'users' => $users
+//     ]);
+// });
+
 require __DIR__.'/auth.php';
