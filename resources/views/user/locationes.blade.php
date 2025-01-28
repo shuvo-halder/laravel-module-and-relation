@@ -29,7 +29,12 @@
                         <td>{{ ++$index }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->location->country_name }}</td>
+                        <td>
+                            {{-- {{ $user->location->country_name }} --}}
+                            @foreach ($user->locationes as $locati)
+                                {{ $locati->country_name }}
+                            @endforeach
+                        </td>
                         
                         <td>
                             <a href="#" class="btn btn-primary btn-sm">Edit</a>
