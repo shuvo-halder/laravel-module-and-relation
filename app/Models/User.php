@@ -43,10 +43,14 @@ class User extends Authenticatable
     ];
 
     public function location(){
-        return $this->hasOne(Location::class, 'uid', 'id');
+        return $this->hasOne(Location::class, 'uid', 'id')->withDefault([
+            'country_name' => 'No Location',
+        ]);
     }
 
     public function locationes(){
-        return $this->hasMany(Location::class, 'uid', 'id');
+        return $this->hasMany(Location::class, 'uid', 'id')->withDefault([
+            'country_name' => 'No Location',
+        ]);
     }
 }
