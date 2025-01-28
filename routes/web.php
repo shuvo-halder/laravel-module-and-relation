@@ -75,18 +75,4 @@ Route::get('/user-loc', [HomeController::class, 'locationes']);
 
 require __DIR__.'/auth.php';
 
-Route::get('/posts', function(){
-    \App\Models\Post::create([
-        'uid' => 1,
-        'title' => 'Post 1',
-    ]);
-    
-    \App\Models\Post::create([
-        'uid' => 2,
-        'title' => 'Post 2',
-    ]);
-    \App\Models\Post::create([
-        'uid' => 3,
-        'title' => 'Post 3',
-    ]);
-});
+Route::get('/posts', [HomeController::class, 'Posts']);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Location;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -32,5 +33,10 @@ class HomeController extends Controller
             'users'=>$users,
 
         ]);
+    }
+
+    public function Posts(){
+
+        return view('post');
     }
 }
