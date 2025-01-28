@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $users = User::with('location')->with('posts')->get();
+        $users = User::has('posts')->with('location')->with('posts')->get();
 
         return view('user.details',[
             'users' => $users
