@@ -11,9 +11,7 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $users = User::whereHas('posts', function($query){
-            $query->where('title', 'like', '%pos%');
-        })->with('location')->with('posts')->get();
+        $users = User::doesntHave('posts')->with('location')->with('posts')->get();
 
         return view('user.details',[
             'users' => $users
