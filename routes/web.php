@@ -63,4 +63,6 @@ Route::get('/user-details', [HomeController::class, 'index']);
 
 Route::get('location', [HomeController::class, 'location']);
 
+Route::get('/user-loc', [HomeController::class, 'locationes']);
+
 require __DIR__.'/auth.php';

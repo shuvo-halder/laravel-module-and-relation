@@ -23,4 +23,14 @@ class HomeController extends Controller
             'locations' => $location
         ]);
     }
+
+    public function locationes(){
+
+        $users = User::with('location')->get();
+
+        return view('user.locationes',[
+            'users'=>$users,
+
+        ]);
+    }
 }
