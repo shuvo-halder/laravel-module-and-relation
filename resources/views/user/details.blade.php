@@ -18,6 +18,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>country</th>
+                    <th>Post</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -29,6 +30,11 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->location->country_name }}</td>
+                        <td>
+                            @foreach ($user->posts as $key => $post)
+                                {{ ++$key }}.{{ $post->title }}</br>
+                            @endforeach
+                        </td>
                         <td>
                             <a href="#" class="btn btn-primary btn-sm">Edit</a>
                             <a href="#" class="btn btn-danger btn-sm">Delete</a>

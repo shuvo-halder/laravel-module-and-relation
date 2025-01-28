@@ -53,4 +53,8 @@ class User extends Authenticatable
             'country_name' => 'No Location',
         ]);
     }
+
+    public function posts(){
+        return $this->hasMany(Post::class, 'uid', 'id');
+    }
 }
