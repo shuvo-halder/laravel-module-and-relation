@@ -28,23 +28,45 @@
     </div>
 
     <script>
+        // $(document).ready(function(){
+        //     $('#__add_blog').on('submit', function(event){
+        //         event.preventDefault();
+        //         // alert('Form Submitted');
+        //         jQuery.ajax({
+        //             url: "{{ route('blogs.store') }}",
+        //             data: jQuery('#__add_blog').serialize(),
+        //             type: 'POST',
+
+        //             success: function(result){
+
+        //                 $('#messageFromServer').css('display','block');
+        //                 jQuery('#messageFromServer').html(result.storeSuccessfylly);
+
+        //                 jQuery('#__add_blog').trigger('reset');
+
+
+        //             }
+        //         })
+        //     });
+        // });
+
         $(document).ready(function(){
             $('#__add_blog').on('submit', function(event){
                 event.preventDefault();
-                // alert('Form Submitted');
-                jQuery.ajax({
+
+                $.ajax({
                     url: "{{ route('blogs.store') }}",
-                    data: jQuery('#__add_blog').serialize(),
-                    type: 'POST',
+                    data: $(this).serialize(),
+                    type: "post",
+                    dataType: "json",
+                    header: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
 
-                    success: function(result){
-
+                    success:function(result){
                         $('#messageFromServer').css('display','block');
-                        jQuery('#messageFromServer').html(result.storeSuccessfylly);
-
-                        jQuery('#__add_blog').trigger('reset');
-
-
+                        $('#messageFromServer').html(result.storeSuccessfylly);
+                        $('#__add_blog').trigger('reset');
                     }
                 })
             });
