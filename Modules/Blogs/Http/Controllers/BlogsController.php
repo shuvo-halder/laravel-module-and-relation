@@ -23,7 +23,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        return view('blogs::create');
+        return view('blogs::red.index');
     }
 
     /**

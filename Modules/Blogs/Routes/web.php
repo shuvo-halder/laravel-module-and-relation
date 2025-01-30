@@ -13,4 +13,5 @@
 
 Route::prefix('blogs')->group(function() {
     Route::get('/', 'BlogsController@index');
+    Route::get('/create', 'BlogsController@create');
 });
