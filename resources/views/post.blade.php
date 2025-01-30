@@ -18,7 +18,11 @@
                         <div class="card-body">
                             <p class="card-text">{{ optional($post->user)->name }}</p>
                         </div>
-                        
+                        <ul>
+                            @foreach ($post->tags as $key => $tag)
+                                <li>{{ ++$key }}.{{ $tag->name }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 @endforeach
             </div>

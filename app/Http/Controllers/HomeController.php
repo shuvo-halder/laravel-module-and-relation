@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Location;
 use App\Models\Post;
+use App\Models\Tag;
 
 class HomeController extends Controller
 {
@@ -36,7 +37,13 @@ class HomeController extends Controller
     }
 
     public function Posts(){
-        $posts = Post::get();
+        $posts = Post::with('tags','user')->get();
+        $tags = Tag::first();
+
+        // dd($posts);
+
+        // $posts->tags()->attach($tags->id);
+
         return view('post',[
             'posts' => $posts,
         ]);

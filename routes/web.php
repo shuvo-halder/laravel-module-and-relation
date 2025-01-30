@@ -16,6 +16,10 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
+
+    Artisan::call('route:clear');
+    Artisan::call('route:cache');
+
     return view('welcome');
 });
 
@@ -73,6 +77,24 @@ Route::get('/user-loc', [HomeController::class, 'locationes']);
 //     ]);
 // });
 
+Route::get('/posts', [HomeController::class, 'Posts']);
+// Route::get('tags/create', function(){
+//     \App\Models\Tag::create([
+//         'name' => 'Laravel3'
+//     ]);
+//     \App\Models\Tag::create([
+//         'name' => 'PHP3'
+//     ]);
+//     \App\Models\Tag::create([
+//         'name' => 'VUE3'
+//     ]);
+//     \App\Models\Tag::create([
+//         'name' => 'Bootstrap3'
+//     ]);
+// });
+
+
 require __DIR__.'/auth.php';
 
-Route::get('/posts', [HomeController::class, 'Posts']);
+
+
