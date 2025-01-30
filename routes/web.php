@@ -93,6 +93,14 @@ Route::get('/posts', [HomeController::class, 'Posts']);
 //     ]);
 // });
 
+Route::get('tags', function(){
+    $tags = \App\Models\Tag::with('posts')->get();
+
+    return view('tags.index',[
+        'tags' => $tags
+    ]);
+});
+
 
 require __DIR__.'/auth.php';
 
