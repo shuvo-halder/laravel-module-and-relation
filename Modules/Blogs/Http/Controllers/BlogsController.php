@@ -5,6 +5,7 @@ namespace Modules\Blogs\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Blogs\Entities\Blogs;
 
 class BlogsController extends Controller
 {
@@ -33,7 +34,19 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Blogs();
+        $data->title = $request->title;
+        $data->category = $request->category;
+
+        $saveData = $data->save();
+
+        if($saveData){
+            return response()->json([
+                'storeSuccessfylly'=>'Data upload successfully',
+                200
+            ]);
+        }
+
     }
 
     /**

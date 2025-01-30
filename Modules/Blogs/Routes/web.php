@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
+use Modules\Blogs\Http\Controllers\BlogsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,4 +15,5 @@
 Route::prefix('blogs')->group(function() {
     Route::get('/', 'BlogsController@index');
     Route::get('/create', 'BlogsController@create');
+    Route::post('/create/submit', 'BlogsController@store')->name('blogs.store');
 });
