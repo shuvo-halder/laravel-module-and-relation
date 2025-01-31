@@ -1,0 +1,11 @@
+{
+    "name": "AjaxCrud",
+    "alias": "ajaxcrud",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AjaxCrud\\Providers\\AjaxCrudServiceProvider"
+    ],
+    "files": []
+}

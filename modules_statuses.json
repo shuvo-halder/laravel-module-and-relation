@@ -1,3 +1,4 @@
 {
-    "Blogs": true
+    "Blogs": true,
+    "AjaxCrud": true
 }
